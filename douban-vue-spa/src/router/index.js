@@ -6,6 +6,10 @@ import Broadcast from '../page/broadcast/Broadcast'
 import Group from '../page/group/Group'
 import Mine from '../page/mine/Mine'
 import Main from '../page/main/Main'
+
+import Movie from '../page/book_movie_music/sub/Movie'
+import TV from '../page/book_movie_music/sub/TV'
+
 Vue.use(Router)
 
 export default new Router({
@@ -23,7 +27,19 @@ export default new Router({
         {
           path: 'book-movie-muisc',
           name: 'BookMovieMusic',
-          component: BookMovieMusic
+          component: BookMovieMusic,
+          children:[
+            {
+              path: 'movie',
+              name: 'Movie',
+              component: Movie
+            },
+            {
+              path: 'tv',
+              name: 'TV',
+              component: TV
+            }
+          ]
         },
         {
           path: 'broadcast',
