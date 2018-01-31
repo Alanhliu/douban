@@ -9,11 +9,14 @@ import Axios from 'axios'
 import VueAxios from 'vue-axios'
 import Loading from './components/loading'
 import 'mint-ui/lib/style.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
 Vue.use(Mint)
 Vue.use(VueAxios, Axios)
 Vue.use(Loading)
+Vue.use(VueAwesomeSwiper)
 
 /* eslint-disable no-new */
 new Vue({

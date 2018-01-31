@@ -27,10 +27,9 @@
         type: String,
         default: 'horizontal'
       },
-
       autoplay: {
         type: Number,
-        default: 5000,
+        default: 3000,
       },
       paginationType: {
         type: String,
@@ -46,31 +45,39 @@
       }
     },
     mounted() {
-      var That = this;
-      new Swiper('.'+That.swipeid, {
+      var self = this;
+      new Swiper('.'+self.swipeid, {
         //循环
-        loop: That.loop,
+        loop: self.loop,
         //分页器
         pagination: '.swiper-pagination',
         //分页类型
-        paginationType: That.paginationType, //fraction,progress,bullets
+        paginationType: self.paginationType, //fraction,progress,bullets
         //自动播放
-        autoplay: That.autoplay,
+        autoplay: self.autoplay,
         //方向
-        direction: That.direction,
+        direction: self.direction,
         //特效
-        effect: That.effect, //slide,fade,coverflow,cube
+        effect: self.effect, //slide,fade,coverflow,cube
         //用户操作swiper之后，是否禁止autoplay
         autoplayDisableOnInteraction : false,
       })
     }
   }
 
+
 </script>
-<style>
-  .swiper-container img{
-    width: 100%
+<style lang="less" scoped>
+  .swiper-container {
+    width: 350px;
+    height: 200px;
+    background: red;
+
+    img {
+      /*width: 100%;*/
+    }
   }
+
   .swiper-pagination-bullet-active {
     background: #fff;
   }
