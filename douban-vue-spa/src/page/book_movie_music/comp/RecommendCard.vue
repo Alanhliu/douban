@@ -30,7 +30,7 @@
 <style lang="less" scoped>
     .box {
       position: relative;
-      width: 200px;
+      width: 100%;
       height: 180px;
       background: yellow;
 

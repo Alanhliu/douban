@@ -11,7 +11,7 @@
 
         <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
           <!-- slides -->
-          <swiper-slide v-for="item in recommend_items">
+          <swiper-slide :style="swiperSlideStyle" v-for="item in recommend_items" :key=item.id>
             <recommend-card
               :card_tag=item.card_tag
               :card_desc=item.card_desc>
@@ -20,7 +20,7 @@
         </swiper>
 
         <ul class="list-content">
-          <li class="list-item" v-for="item in items">{{item}}</li>
+          <li class="list-item" v-for="item in items" :key=item>{{item}}</li>
         </ul>
 
       </scroll>
@@ -44,8 +44,8 @@
         return {
           items: [],
           swiperOption: {
-            slidesPerView: 1.8,
-            spaceBetween: 10,
+            slidesPerView: 'auto',
+            spaceBetween: 15,
             freeMode: true,
             loop: false,
             pagination: {
@@ -57,9 +57,15 @@
               prevEl: '.swiper-button-prev'
             }
           },
+          swiperSlideStyle: {
+            width:'60%'
+          },
           recommend_items: [
-            {"card_tag":"闪光时刻","card_desc":"大雪纷飞的圣丹斯，2018年第一批爆款佳片火热出炉！"},
-            {"card_tag":"缤纷盘点","card_desc":"二月将映新片盘点！告诉你春节档电影哪家强"},
+            {"id":1,"card_tag":"闪光时刻","card_desc":"大雪纷飞的圣丹斯，2018年第一批爆款佳片火热出炉！"},
+            {"id":2,"card_tag":"缤纷盘点","card_desc":"二月将映新片盘点！告诉你春节档电影哪家强"},
+            {"id":3,"card_tag":"缤纷盘点","card_desc":"二月将映新片盘点！告诉你春节档电影哪家强"},
+            {"id":4,"card_tag":"缤纷盘点","card_desc":"二月将映新片盘点！告诉你春节档电影哪家强"},
+            {"id":5,"card_tag":"缤纷盘点","card_desc":"二月将映新片盘点！告诉你春节档电影哪家强"},
           ]
         }
       },
@@ -86,4 +92,5 @@
     height: 40px;
     background: red;
   }
+
 </style>

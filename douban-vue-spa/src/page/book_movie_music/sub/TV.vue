@@ -3,7 +3,7 @@
     TV
     <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
       <!-- slides -->
-      <swiper-slide v-for="item in recommend_items">
+      <swiper-slide v-for="item in recommend_items" :key=item.id>
 
         <recommend-card
           :card_tag=item.card_tag
@@ -24,7 +24,7 @@
       data() {
         return {
           swiperOption: {
-            slidesPerView: 1.8,
+            slidesPerView: 3,
             spaceBetween: 10,
             freeMode: true,
             loop: false,
@@ -38,8 +38,8 @@
             }
           },
           recommend_items: [
-            {"card_tag":"闪光时刻","card_desc":"大雪纷飞的圣丹斯，2018年第一批爆款佳片火热出炉！"},
-            {"card_tag":"缤纷盘点","card_desc":"二月将映新片盘点！告诉你春节档电影哪家强"},
+            {"id":1,"card_tag":"闪光时刻","card_desc":"大雪纷飞的圣丹斯，2018年第一批爆款佳片火热出炉！"},
+            {"id":2,"card_tag":"缤纷盘点","card_desc":"二月将映新片盘点！告诉你春节档电影哪家强"},
           ]
         }
       },
