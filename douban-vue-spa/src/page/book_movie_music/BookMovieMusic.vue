@@ -54,6 +54,14 @@
         created() {
 
         },
+        updated() {
+
+        },
+        beforeRouteEnter(to, from, next) {
+          next(vm=>{
+            vm.$router.push({name:vm.selected});
+          })
+        },
         mounted() {
 
         },
