@@ -35,15 +35,20 @@
       background: yellow;
 
       .pic {
-
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 65%;
+        background: #007aff;
       }
       .tag {
         position: absolute;
         left: 10px;
-        bottom: 36%;
+        bottom: 37%;
         background: white;
         font-size: 12px;
-        height: 20px;
+        height: 18px;
         border-radius: 5px;
         padding: 2px 3px 2px 3px;
       }

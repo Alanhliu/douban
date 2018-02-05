@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="main">
     <keep-alive>
       <router-view></router-view>
     </keep-alive>

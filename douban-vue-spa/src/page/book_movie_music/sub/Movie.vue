@@ -1,14 +1,17 @@
 <template>
-    <div class="sub-movie">
+    <div class="sub-movie" ref="content">
       <scroll ref="scroll"
               :data="items">
 
+        <!--年度电影-->
         <div class="header">
           <img src="" alt="">
         </div>
 
+        <!--推荐header-->
         <section-header></section-header>
 
+        <!--推荐横向滚动-->
         <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
           <!-- slides -->
           <swiper-slide :style="swiperSlideStyle" v-for="item in recommend_items" :key=item.id>
@@ -18,6 +21,11 @@
             </recommend-card>
           </swiper-slide>
         </swiper>
+
+        <!--找电影 & 我的影视-->
+        <div class="find-mine-box">
+          <find-mine-box></find-mine-box>
+        </div>
 
         <ul class="list-content">
           <li class="list-item" v-for="item in items" :key=item>{{item}}</li>
@@ -32,13 +40,19 @@
     import scroll from '../../../components/scroll/scroll'
     import SectionHeader from '../comp/SectionHeader'
     import RecommendCard from '../comp/RecommendCard'
+    import FindMineBox from '../comp/FindMineBox'
 
     export default {
       name: "movie",
       components: {
         scroll,
         SectionHeader,
-        RecommendCard
+        RecommendCard,
+        FindMineBox
+      },
+      mounted() {
+        // let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        // this.$refs.content.style.height = h-64-44-60 +'px';
       },
       data() {
         return {
@@ -84,13 +98,24 @@
 
 <style lang="less" scoped>
   .sub-movie {
-    margin-top: 4px;
-    height: 400px;
+    /*margin-top: 4px;*/
+    /*height: 400px;*/
+
+    position: absolute;
+    top: 64+46+3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 
   .header {
     height: 40px;
     background: red;
+  }
+
+  .find-mine-box {
+    margin-top: 30px;
+    height: 55px;
   }
 
 </style>

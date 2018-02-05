@@ -40,7 +40,7 @@
 
   .header-items-box {
     height: 30px;
-    margin: 26px 8px 8px 0;
+    margin: 25px 8px 8px 0;
   }
 
   .header-left-items {

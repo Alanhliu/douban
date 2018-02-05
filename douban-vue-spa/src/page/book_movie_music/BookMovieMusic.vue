@@ -17,7 +17,7 @@
       </mt-navbar>
 
       <keep-alive>
-        <router-view></router-view>
+          <router-view></router-view>
       </keep-alive>
     </div>
 
@@ -33,7 +33,7 @@
         name: 'book-movie-music',
         data() {
           return {
-            selected: 1
+            selected: "Movie"
           }
         },
         components: {
@@ -67,5 +67,11 @@
 </script>
 
 <style lang="less" scoped>
-
+  .page {
+    position: absolute;
+    top: 0;
+    bottom: 55px;//tabbar 高度
+    left: 0;
+    right: 0;
+  }
 </style>
