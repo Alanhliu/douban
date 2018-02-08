@@ -11,6 +11,7 @@ import Loading from './components/loading'
 import 'mint-ui/lib/style.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+import './assets/css/base.less'
 
 Vue.config.productionTip = false
 Vue.use(Mint)
